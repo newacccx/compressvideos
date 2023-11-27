@@ -69,7 +69,7 @@ logging.basicConfig(
         RotatingFileHandler(
             LOG_FILE_ZZGEVC,
             maxBytes=FREE_USER_MAX_FILE_SIZE,
-            backupCount=1000
+            backupCount=10
         ),
         logging.StreamHandler()
     ]
