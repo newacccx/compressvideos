@@ -47,6 +47,8 @@ resolution = []
 audio_b = []
 preset = []
 codec = []
+audio_codec = []
+metadata = []
 # senpai I am changing app string WHY???????
 pid_list = []
 app = Client(
