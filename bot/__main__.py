@@ -18,6 +18,8 @@ from bot import (
     audio_b,
     preset,
     codec,
+    audio_codec,
+    metadata,
     watermark
     
 
@@ -147,6 +149,25 @@ if __name__ == "__main__" :
         else:
             await message.reply_text("Error")
             
+    @app.on_message(filters.incoming & filters.command(["audio_codec", f"audio_codec@{BOT_USERNAME}"]))
+    async def changecode(app, message):
+        if message.from_user.id in AUTH_USERS:
+            aud_c = message.text.split(" ", maxsplit=1)[1]
+            OUT = f"I will be using : {aud_c} audio_codec"
+            audio_codec.insert(0, f"{aud_c}")
+            await message.reply_text(OUT)
+        else:
+            await message.reply_text("Error")   
+            
+    @app.on_message(filters.incoming & filters.command(["metadata", f"metadata@{BOT_USERNAME}"]))
+    async def changecode(app, message):
+        if message.from_user.id in AUTH_USERS:
+            meta = message.text.split(" ", maxsplit=1)[1]
+            OUT = f"I will be using : {meta} metadata"
+            metadata.insert(0, f"{meta}")
+            await message.reply_text(OUT)
+        else:
+            await message.reply_text("Error")   
         
     @app.on_message(filters.incoming & filters.command(["compress", f"compress@{BOT_USERNAME}"]))
     async def help_message(app, message):
