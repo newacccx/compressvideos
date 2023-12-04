@@ -26,6 +26,8 @@ from bot import (
     audio_b,
     preset,
     codec,
+    audio_codec,
+    metadata,
     watermark,
     pid_list
 )
