@@ -28,17 +28,15 @@
 
 2. **Dynamic Resolution Configuration:** Customize video resolutions beyond predefined options, providing flexibility for diverse use cases.
 
-3. **Batch Processing:** Process multiple videos concurrently with batch processing capabilities, improving efficiency.
+3. **Batch Processing:** Process multiple videos concurrently with batch processing capabilities, improving efficiency.[#soon]
 
 4. **Customizable Presets:** Save and reuse encoding presets, promoting consistency across projects and facilitating complex encoding setups.
-
-5. **Webhooks and Notifications:** Receive task completion notifications via webhooks, emails, or messaging services, enhancing user experience.
 
 6. **Progress Tracking:** Monitor real-time progress of encoding tasks, offering insights into completion status.
 
 7. **Error Handling and Logs:** Detailed logs and user-friendly error messages aid in effective issue diagnosis and troubleshooting.
 
-8. **User Authentication:** Securely manage encoding tasks and settings with user accounts and authentication.
+8. **User Authentication:** Securely manage encoding tasks and settings with user accounts and authentication.[soon]
 
 9. **API Integration:** Integrate seamlessly with other applications or services using a well-documented API, expanding project usability.
 
