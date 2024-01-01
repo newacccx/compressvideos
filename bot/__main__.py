@@ -18,7 +18,10 @@ from bot import (
     audio_b,
     preset,
     codec,
-    watermark
+    text,
+    size,
+    acodec,
+    metadata
     
 
 )
@@ -99,9 +102,16 @@ if __name__ == "__main__" :
             
     @app.on_message(filters.incoming & filters.command(["settings", f"settings@{BOT_USERNAME}"]))
     async def settings(app, message):
-        if message.from_user.id in AUTH_USERS:
-            await message.reply_text(f"<b>The current settings will be added to your video file :</b>\n\n<b>Codec</b> : {codec[0]} \n<b>Crf</b> : {crf[0]} \n<b>Resolution</b> : {resolution[0]} \n<b>Preset</b> : {preset[0]} \n<b>Audio Bitrates</b> : {audio_b[0]}")
-            
+       if message.from_user.id in AUTH_USERS:
+          video_settings = f"🏷 Video\n┏━━━━━━━━━━━━━━━━━\n┣ Codec  ➜ {codec[0]}\n┣ Crf  ➜ {crf[0]}\n┣ Resolution  ➜ {resolution[0]}\n┗━━━━━━━━━━━━━━━━━"
+          audio_settings = f"🏷 Audio\n┏━━━━━━━━━━━━━━━━━\n┣ Audio  ➜ {audio[0]}\n┣ Bitrates ➜ {audio_b[0]}\n┗━━━━━━━━━━━━━━━━━"
+          watermark_settings = f"🏷 Watermark\n┏━━━━━━━━━━━━━━━━━\n┣ Position ➜ {watermark_position}\n┣ Size  ➜ {watermark_size}\n [ - metadata={metadata_setting}\n┗━━━━━━━━━━━━━━━━━"
+          speed_settings = f"🏷 Speed\n┏━━━━━━━━━━━━━━━━━\n┣ Preset ➜ {preset[0]}\n┗━━━━━━━━━━━━━━━━━"
+
+          settings_message = f"<b>The current settings will be added to your video file:</b>\n\n{video_settings}\n\n{audio_settings}\n\n{watermark_settings}\n\n{speed_settings}"
+        
+          await message.reply_text(settings_message, parse_mode="HTML")
+
             
                
     @app.on_message(filters.incoming & filters.command(["resolution", f"resolution@{BOT_USERNAME}"]))
@@ -114,7 +124,45 @@ if __name__ == "__main__" :
         else:
             await message.reply_text("Error")
 
-            
+     @app.on_message(filters.incoming & filters.command(["acodec", f"audio@{BOT_USERNAME}"]))
+     async def changecrf(app, message):
+         if message.from_user.id in AUTH_USERS:
+             ac = message.text.split(" ", maxsplit=1)[1]
+             OUT = f"I will be using : {ac} Audio codec"
+             acodec.insert(0, f"{ac}")
+             await message.reply_text(OUT)
+         else:
+             await message.reply_text("Error")
+             
+      @app.on_message(filters.incoming & filters.command(["metadata", f"audio@{BOT_USERNAME}"]))
+      async def changecrf(app, message):
+          if message.from_user.id in AUTH_USERS:
+              meta = message.text.split(" ", maxsplit=1)[1]
+              OUT = f"I will be using : {meta} metadata"
+              metadata.insert(0, f"{meta}")
+              await message.reply_text(OUT)
+          else:
+              await message.reply_text("Error")
+              
+      @app.on_message(filters.incoming & filters.command(["size", f"audio@{BOT_USERNAME}"]))
+      async def changecrf(app, message):
+           if message.from_user.id in AUTH_USERS:
+               si = message.text.split(" ", maxsplit=1)[1]
+               OUT = f"I will be using : {si} watermark size"
+               size.insert(0, f"{si}")
+               await message.reply_text(OUT)
+           else:
+               await message.reply_text("Error")
+               
+      @app.on_message(filters.incoming & filters.command(["text", f"audio@{BOT_USERNAME}"]))
+      async def changecrf(app, message):
+           if message.from_user.id in AUTH_USERS:
+               te = message.text.split(" ", maxsplit=1)[1]
+               OUT = f"I will be using : {te} watermark text"
+               text.insert(0, f"{te}")
+               await message.reply_text(OUT)
+           else:
+               await message.reply_text("Error")        
                
     @app.on_message(filters.incoming & filters.command(["preset", f"preset@{BOT_USERNAME}"]))
     async def changepr(app, message):
@@ -141,7 +189,7 @@ if __name__ == "__main__" :
     async def changea(app, message):
         if message.from_user.id in AUTH_USERS:
             aud = message.text.split(" ", maxsplit=1)[1]
-            OUT = f"I will be using : {aud} audio"
+            OUT = f"I will be using : {aud} audio bitrate"
             audio_b.insert(0, f"{aud}")
             await message.reply_text(OUT)
         else:
