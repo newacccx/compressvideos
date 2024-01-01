@@ -18,8 +18,6 @@ logging.basicConfig(
 )
 LOGGER = logging.getLogger(__name__)
 
-#from bot.helper_funcs.admin_check import AdminCheck
-
 
 async def button(bot, update: CallbackQuery):
     cb_data = update.data
