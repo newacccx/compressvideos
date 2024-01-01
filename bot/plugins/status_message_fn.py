@@ -18,7 +18,9 @@ from bot import (
     resolution,
     audio_b,
     preset,
-    watermark,
+    text,
+    size,
+    metadata,
     data,
     pid_list
 )
