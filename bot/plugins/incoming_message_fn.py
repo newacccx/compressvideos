@@ -33,54 +33,15 @@ from pyrogram.handlers import MessageHandler, CallbackQueryHandler
 from pyrogram.types import ChatPermissions, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, UsernameNotOccupied, ChatAdminRequired, PeerIdInvalid
 
-#from bot.helper_funcs.utils import(
-#  delete_downloads
-#)
 os.system("wget https://telegra.ph/file/059d8942b7c02750c01ab.jpg -O thumb.jpg")
 
-#LOGS_CHANNEL = -1001283278354
 CURRENT_PROCESSES = {}
 CHAT_FLOOD = {}
 broadcast_ids = {}
 bot = app        
 async def incoming_start_message_f(bot, update):
     """/start command"""
- 
-  #  update_channel = UPDATES_CHANNEL
-   # if update_channel:
-   # try:
-    #      user = await bot.get_chat_member(update_channel, update.chat.id)
-     #     if user.status == "kicked":
-      #         await bot.send_message(
-      #             chat_id=update.chat.id,
-      #             text="Sorry Sir, You are Banned to use me. Contact my [Boss](https://t.me/Nur0ns).",
-      #             parse_mode="markdown",
-      #             disable_web_page_preview=True
-      #          )
-      #         return
-      #    except:
-      #          pass
-      #  except UserNotParticipant:
-       #     await bot.send_message(
-       #         chat_id=update.chat.id,
-       #         text="**Please Join My Updates Channel to use this Bot!**",
-       #         reply_markup=InlineKeyboardMarkup(
-       #             [
-       #                 [
-       #                     InlineKeyboardButton("Join Updates Channel", url=f"https://t.me/{update_channel}")
-        #                ]
-        #            ]
-        #        ),
-        #        parse_mode="markdown"
-        #    )
-        #    return
-    #    except Exception:
-     #       await bot.send_message(
-      #          chat_id=update.chat.id,
-       #         text="Something went Wrong. Contact my [Boss](https://t.me/Nur0ns).",
-        #        parse_mode="markdown",
-         #       disable_web_page_preview=True)
-          #  return
+    
     await bot.send_message(
         chat_id=update.chat.id,
         text=Localisation.START_TEXT,
@@ -96,98 +57,12 @@ async def incoming_start_message_f(bot, update):
     
 async def incoming_compress_message_f(update):
   """/compress command"""
-
-  
-  #update_channel = UPDATES_CHANNEL
-  #if update_channel:
-  #try:
-  #        user = await bot.get_chat_member(update.chat.id)
-  #        if user.status == "kicked":
-  #           await bot.send_message(
-  #               chat_id=update.chat.id,
-  #               text="Sorry Sir, You are Banned to use me. Contact my [BOSS](https://t.me/Nur0ns).",
-  #               parse_mode="markdown",
-  #               disable_web_page_preview=True
-    #         )
-  #except:
-   # pass
-  #           return
- #     except UserNotParticipant:
-  #        await bot.send_message(
-   #           chat_id=update.chat.id,
-    #          text="**Please Join My Updates Channel to use this Bot!**",
-           #  reply_markup=InlineKeyboardMarkup(
-      #            [
-       ##               [
-        #                  InlineKeyboardButton("Join Updates Channel", url=f"https://t.me/{update_channel}")
-      #                ]
-      #            ]
-      #        ),
-      #        parse_mode="markdown"
-      #    )
-        #  return
-    #  except Exception:
-    #      await bot.send_message(
-    #          chat_id=update.chat.id,
-    #          text="Something went Wrong. Contact my [BOSS](https://t.me/Nur0ns).",
-    #          parse_mode="markdown",
-    #          disable_web_page_preview=True
-    #      )
-    #      return
-  #if update.reply_to_message is None:
-  #  try:
-  #    await bot.send_message(
-  #      chat_id=update.chat.id,
-  #      text="🤬 Reply to telegram media 🤬",
-  #      reply_to_message_id=update.message_id
-  #    )
-  #  except:
-  #    pass
-  #  return
-  #target_percentage = 50
-  #isAuto = False
-  #if len(update.command) > 1:
-  #  try:
-  #    if int(update.command[1]) <= 90 and int(update.command[1]) >= 10:
-  #      target_percentage = int(update.command[1])
-  #    else:
-  #      try:
-  #        await bot.send_message(
-  #          chat_id=update.chat.id,
-  #          text="🤬 Value should be 10 to 90",
-  #          reply_to_message_id=update.message_id
-  #        )
-  #        return
-  #      except:
-  #        pass
-  #  except:
-  #    pass
-  #else:
-    #media = replied.media
-  #  media = update.reply_to_message
-   # if hasattr(media, "document"):
-    #         file = media.document
-     #        mime_type = file.mime_type
-      #       filename = update.media.name
-       #      if not filename:
-        #         if "audio" in mime_type:
-         #            filename = (
-          #               "audio_" + datetime.now().isoformat("_", "seconds") + ".ogg"
-           #            )
-            #     elif "video" in mime_type:
-             #         filename = (
-              #             "video_" + datetime.now().isoformat("_", "seconds") + ".mp4"
-               #        )
-   # user_file = update.name
                                    
   isAuto = True
-    #saved_file_path = video #DOWNLOAD_LOCATION + "/" + filename
-    #LOGGER.info(saved_file_path)
   d_start = time.time()
   c_start = time.time()
   u_start = time.time()
   status = DOWNLOAD_LOCATION + "/status.json"
- # if not os.path.exists(status):
   sent_message = await bot.send_message(
   chat_id=update.chat.id,
   text=Localisation.DOWNLOAD_START,
@@ -212,9 +87,7 @@ async def incoming_compress_message_f(update):
 
         json.dump(statusMsg, f, indent=2)
       video = await bot.download_media(
-        #message=update.reply_to_message,
         message=update,  
-        #file_name=saved_file_path,
         progress=progress_for_pyrogram,
         progress_args=(
           bot,
@@ -242,7 +115,6 @@ async def incoming_compress_message_f(update):
           await download_start.delete()
         except:
           pass
-       # delete_downloads()
         LOGGER.info("Download stopped")
         return
   except (ValueError) as e:
@@ -251,31 +123,13 @@ async def incoming_compress_message_f(update):
           text=str(e)
         )
       except:
-          pass
-      #delete_downloads()            
+          pass            
   try:
       await sent_message.edit_text(                
         text=Localisation.SAVED_RECVD_DOC_FILE                
       )
   except:
       pass     
- # else:
-    #try:
- #     await bot.send_message(
- #       chat_id=update.chat.id,
- #       text=Localisation.FF_MPEG_RO_BOT_STOR_AGE_ALREADY_EXISTS,
-  # #     reply_markup=InlineKeyboardMarkup(
-   # #        [
-       #         [
-      #              InlineKeyboardButton('Show Bot Status', url=f'https://t.me/{LOG_CHANNEL}') # That's Username na ...
-     #           ]
-    #        ]
-   #     ),
-  #      reply_to_message_id=update.message_id
- #     )
-    #except:
-    #  pass
-   # return
   
   if os.path.exists(saved_file_path):
     downloaded_time = TimeFormatter((time.time() - d_start)*1000)
@@ -296,7 +150,6 @@ async def incoming_compress_message_f(update):
         await download_start.delete()
       except:
           pass          
-     # delete_downloads()
       return
     thumb_image_path = await take_screen_shot(
       saved_file_path,
