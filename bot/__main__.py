@@ -122,6 +122,17 @@ if __name__ == "__main__" :
             await message.reply_text(OUT)
         else:
             await message.reply_text("Error")
+            
+    @app.on_message(filters.incoming & filters.command(["auth", f"auth@{BOT_USERNAME}"]))
+    async def auth(app, message):
+        if message.from_user.id in AUTH_USERS:
+           cr = message.text.split(" ", maxsplit=1)[1]
+           OUT = f"Look at this nigga using auth btw this {cr} added to Authorised users"
+           auth = int(f'{cr}')
+           Config.AUTH_USERS.append(auth)
+           await message.reply_text(OUT)
+       else:
+           await message.reply_text("Error")
 
      @app.on_message(filters.incoming & filters.command(["acodec", f"audio@{BOT_USERNAME}"]))
      async def changecrf(app, message):
