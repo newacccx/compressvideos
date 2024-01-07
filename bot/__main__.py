@@ -140,7 +140,7 @@ if __name__ == "__main__" :
            await message.reply_text("Error")
 
      @app.on_message(filters.incoming & filters.command(["acodec", f"audio@{BOT_USERNAME}"]))
-     async def changecrf(app, message):
+     async def changeac(app, message):
          if message.from_user.id in AUTH_USERS:
              ac = message.text.split(" ", maxsplit=1)[1]
              OUT = f"I will be using : {ac} Audio codec"
@@ -150,7 +150,7 @@ if __name__ == "__main__" :
              await message.reply_text("Error")
              
       @app.on_message(filters.incoming & filters.command(["metadata", f"audio@{BOT_USERNAME}"]))
-      async def changecrf(app, message):
+      async def changemeta(app, message):
           if message.from_user.id in AUTH_USERS:
               meta = message.text.split(" ", maxsplit=1)[1]
               OUT = f"I will be using : {meta} metadata"
@@ -160,7 +160,7 @@ if __name__ == "__main__" :
               await message.reply_text("Error")
               
       @app.on_message(filters.incoming & filters.command(["size", f"audio@{BOT_USERNAME}"]))
-      async def changecrf(app, message):
+      async def changesi(app, message):
            if message.from_user.id in AUTH_USERS:
                si = message.text.split(" ", maxsplit=1)[1]
                OUT = f"I will be using : {si} watermark size"
@@ -170,7 +170,7 @@ if __name__ == "__main__" :
                await message.reply_text("Error")
                
       @app.on_message(filters.incoming & filters.command(["text", f"audio@{BOT_USERNAME}"]))
-      async def changecrf(app, message):
+      async def changete(app, message):
            if message.from_user.id in AUTH_USERS:
                te = message.text.split(" ", maxsplit=1)[1]
                OUT = f"I will be using : {te} watermark text"
