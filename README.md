@@ -8,19 +8,19 @@
 
 ## Deployment
 
-[![Deploy](https://heroku.com/deploy?template=https://github.com/Tobigod123/ANIMESPECTRUM))](#)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## Available Commands
 
-- `START`: Check if the bot is alive 💥
-- `HELP`: Access knowledge resources 👑
-- `VCODEC`: Explore and configure video codec settings, supporting libx264(avc), libx265(hevc), VP9, AV1, and more.
+- `/START`: Check if the bot is alive 💥
+- `/HELP`: Access knowledge resources 👑
+- `/CODEC`: Explore and configure video codec settings, supporting libx264(avc), libx265(hevc), VP9, AV1, and more.
 - `ACODEC`: Configure audio codec settings, including libpous support.
-- 'ABITRATE' : Configure your audio bitrate, with options like 128k, 40k, 60k.
+- '/BITRATE': Configure your audio bitrate, with options like 128k, 40k, 60k.
 - `CRF`: Understand and set Constant Rate Factor (CRF) for various resolutions.
-- `QUALITY`: Customize video resolutions dynamically, e.g., 854x480(480p), 1280x720(720p), 1980x1080(1080p), and user-defined resolutions.
-- `SPEED`: Configure preset settings, including ultra-fast, very fast, fast, medium, slow, and very slow.
-- `SETTINGS`: Check and modify current FFMPEG code settings.
+- '/resolution`: Customize video resolutions dynamically, e.g., 854x480(480p), 1280x720(720p), 1980x1080(1080p), and user-defined resolutions.
+- `/preset`: Configure preset settings, including ultra-fast, very fast, fast, medium, slow, and very slow.
+- `/SETTINGS`: Check and modify current FFMPEG code settings.
 
 ## Advanced Features
 
