@@ -55,7 +55,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     name.append("Anime Zenith")
     metadata.append("Anime Zenith")
     size.append("15")
-    file_generator_command = (
+    file_genertor_command = (
     f"ffmpeg -hide_banner -loglevel quiet -progress '{progress}' -i '{video_file}' "
     f"-metadata 'title={metadata[0]}' -c:v {codec[0]} -map 0 -crf {crf[0]} -c:s copy "
     f"-pix_fmt yuv420p -s {resolution[0]} -b:v 150k -c:a {acodec[0]} -b:a {audio_b[0]} "
