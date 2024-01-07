@@ -20,6 +20,7 @@ from bot import (
     codec,
     text,
     size,
+    acodec,
     metadata
     
 
@@ -49,6 +50,10 @@ codec.append("libx264")
 resolution.append("854x480")
 preset.append("veryfast")
 audio_b.append("40k")
+acodec.append("libpous")
+text.append("Anime Zenith")
+metadata.append("Anime Zenith")
+size.append("15")
 # 🤣
 
 
