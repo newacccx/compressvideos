@@ -271,7 +271,7 @@ async def incoming_compress_message_f(update):
      except:
        pass
       
-  else:
+    else:
     #  delete_downloads()
     try:
         await sent_message.edit_text(                    
@@ -288,6 +288,7 @@ async def incoming_compress_message_f(update):
         await download_start.delete()
     except:
         pass
+
 
     
 async def incoming_cancel_message_f(bot, update):
