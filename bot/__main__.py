@@ -99,8 +99,8 @@ if __name__ == "__main__" :
     async def settings(app, message):
         if message.from_user.id in AUTH_USERS:
             video_settings = f"🏷 Video\n┏━━━━━━━━━━━━━━━━━\n┣ Codec  ➜ {codec[0]}\n┣ Crf  ➜ {crf[0]}\n┣ Resolution  ➜ {resolution[0]}\n┗━━━━━━━━━━━━━━━━━"
-            audio_settings = f"🏷 Audio\n┏━━━━━━━━━━━━━━━━━\n┣ Audio  ➜ {audio[0]}\n┣ Bitrates ➜ {audio_b[0]}\n┗━━━━━━━━━━━━━━━━━"
-            watermark_settings = f"🏷 Watermark\n┏━━━━━━━━━━━━━━━━━\n┣ Position ➜ {watermark_position}\n┣ Size  ➜ {watermark_size}\n [ - metadata={metadata_setting}\n┗━━━━━━━━━━━━━━━━━"
+            audio_settings = f"🏷 Audio\n┏━━━━━━━━━━━━━━━━━\n┣ Audio  ➜ {acodec[0]}\n┣ Bitrates ➜ {audio_b[0]}\n┗━━━━━━━━━━━━━━━━━"
+            watermark_settings = f"🏷 Watermark\n┏━━━━━━━━━━━━━━━━━\n┣ Size  ➜ {size[0]}\n┣ Text  ➜ {text[0]}\n┣ metadata={metadata[0]}}\n┗━━━━━━━━━━━━━━━━━"
             speed_settings = f"🏷 Speed\n┏━━━━━━━━━━━━━━━━━\n┣ Preset ➜ {preset[0]}\n┗━━━━━━━━━━━━━━━━━"
 
             settings_message = f"<b>The current settings will be added to your video file:</b>\n\n{video_settings}\n\n{audio_settings}\n\n{watermark_settings}\n\n{speed_settings}"
