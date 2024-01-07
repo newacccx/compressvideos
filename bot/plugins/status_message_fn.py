@@ -19,6 +19,7 @@ from bot import (
     audio_b,
     preset,
     text,
+    acodec,
     size,
     metadata,
     data,
