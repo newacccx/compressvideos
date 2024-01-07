@@ -128,7 +128,7 @@ if __name__ == "__main__" :
         else:
             await message.reply_text("Error")
 
-    @app.on_message(filters.incoming & filters.command(["acodec", f"audio@{BOT_USERNAME}"]))
+    @app.on_message(filters.incoming & filters.command(["acodec", f"acodec@{BOT_USERNAME}"]))
     async def changeac(app, message):
         if message.from_user.id in AUTH_USERS:
             ac = message.text.split(" ", maxsplit=1)[1]
@@ -138,7 +138,7 @@ if __name__ == "__main__" :
         else:
             await message.reply_text("Error")
 
-    @app.on_message(filters.incoming & filters.command(["metadata", f"audio@{BOT_USERNAME}"]))
+    @app.on_message(filters.incoming & filters.command(["metadata", f"metadata@{BOT_USERNAME}"]))
     async def changemeta(app, message):
         if message.from_user.id in AUTH_USERS:
             meta = message.text.split(" ", maxsplit=1)[1]
@@ -148,7 +148,7 @@ if __name__ == "__main__" :
         else:
             await message.reply_text("Error")
 
-    @app.on_message(filters.incoming & filters.command(["size", f"audio@{BOT_USERNAME}"]))
+    @app.on_message(filters.incoming & filters.command(["size", f"size@{BOT_USERNAME}"]))
     async def changesi(app, message):
         if message.from_user.id in AUTH_USERS:
             si = message.text.split(" ", maxsplit=1)[1]
@@ -158,7 +158,7 @@ if __name__ == "__main__" :
         else:
             await message.reply_text("Error")
 
-    @app.on_message(filters.incoming & filters.command(["text", f"audio@{BOT_USERNAME}"]))
+    @app.on_message(filters.incoming & filters.command(["text", f"text@{BOT_USERNAME}"]))
     async def changete(app, message):
         if message.from_user.id in AUTH_USERS:
             te = message.text.split(" ", maxsplit=1)[1]
