@@ -51,7 +51,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     resolution.append("854x480")
     preset.append("veryfast")
     audio_b.append("40k")
-    acodec.append("libpous")
+    acodec.append("libopus")
     text.append("Anime Zenith")
     metadata.append("Anime Zenith")
     size.append("15")
@@ -62,8 +62,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     f"-preset {preset[0]} -metadata:s:a 'title={metadata[0]}' -metadata:s:s 'title={metadata[0]}' "
     f'-vf "drawtext=fontfile=font.ttf:fontsize={size[0]}:fontcolor=white:bordercolor=black@0.50:x=w-tw-10:y=10:box=1:boxcolor=black@0.5:boxborderw=6:text={text[0]}' 
     f"'{out_put_file_name}' -y"
-  )
-
+)
     COMPRESSION_START_TIME = time.time()
     process = await asyncio.create_subprocess_shell(
           file_genertor_command,
