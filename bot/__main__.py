@@ -123,7 +123,7 @@ if __name__ == "__main__" :
             cr = message.text.split(" ", maxsplit=1)[1]
             OUT = f"Look at this nigga using auth btw this {cr} added to Authorised users"
             auth = int(f'{cr}')
-            bot.config.AUTH_USERS.append(auth)
+            Config.AUTH_USERS.append(auth)
             await message.reply_text(OUT)
         else:
             await message.reply_text("Error")
