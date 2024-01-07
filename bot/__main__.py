@@ -19,7 +19,7 @@ from bot import (
     audio_b,
     preset,
     codec,
-    text,
+    name,
     size,
     acodec,
     metadata
@@ -48,8 +48,8 @@ codec.append("libx264")
 resolution.append("854x480")
 preset.append("veryfast")
 audio_b.append("40k")
-acodec.append("libpous")
-text.append("Anime Zenith")
+acodec.append("libopus")
+name.append("Anime Zenith")
 metadata.append("Anime Zenith")
 size.append("15")
 
@@ -100,7 +100,7 @@ if __name__ == "__main__" :
         if message.from_user.id in AUTH_USERS:
             video_settings = f"🏷 Video\n┏━━━━━━━━━━━━━━━━━\n┣ Codec  ➜ {codec[0]}\n┣ Crf  ➜ {crf[0]}\n┣ Resolution  ➜ {resolution[0]}\n┗━━━━━━━━━━━━━━━━━"
             audio_settings = f"🏷 Audio\n┏━━━━━━━━━━━━━━━━━\n┣ Audio  ➜ {acodec[0]}\n┣ Bitrates ➜ {audio_b[0]}\n┗━━━━━━━━━━━━━━━━━"
-            watermark_settings = f"🏷 Watermark\n┏━━━━━━━━━━━━━━━━━\n┣ Size  ➜ {size[0]}\n┣ Text  ➜ {text[0]}\n┣ metadata={metadata[0]}\n┗━━━━━━━━━━━━━━━━━"
+            watermark_settings = f"🏷 Watermark\n┏━━━━━━━━━━━━━━━━━\n┣ Size  ➜ {size[0]}\n┣ Text  ➜ {name[0]}\n┣ metadata={metadata[0]}\n┗━━━━━━━━━━━━━━━━━"
             speed_settings = f"🏷 Speed\n┏━━━━━━━━━━━━━━━━━\n┣ Preset ➜ {preset[0]}\n┗━━━━━━━━━━━━━━━━━"
 
             settings_message = f"<b>The current settings will be added to your video file:</b>\n\n{video_settings}\n\n{audio_settings}\n\n{watermark_settings}\n\n{speed_settings}"
@@ -123,7 +123,7 @@ if __name__ == "__main__" :
             cr = message.text.split(" ", maxsplit=1)[1]
             OUT = f"Look at this nigga using auth btw this {cr} added to Authorised users"
             auth = int(f'{cr}')
-            Config.AUTH_USERS.append(auth)
+            bot.config.AUTH_USERS.append(auth)
             await message.reply_text(OUT)
         else:
             await message.reply_text("Error")
@@ -158,12 +158,12 @@ if __name__ == "__main__" :
         else:
             await message.reply_text("Error")
 
-    @app.on_message(filters.incoming & filters.command(["text", f"text@{BOT_USERNAME}"]))
+    @app.on_message(filters.incoming & filters.command(["name", f"name@{BOT_USERNAME}"]))
     async def changete(app, message):
         if message.from_user.id in AUTH_USERS:
-            te = message.text.split(" ", maxsplit=1)[1]
-            OUT = f"I will be using : {te} watermark text"
-            text.insert(0, f"{te}")
+            na = message.text.split(" ", maxsplit=1)[1]
+            OUT = f"I will be using : {na} watermark name"
+            name.insert(0, f"{na}")
             await message.reply_text(OUT)
         else:
             await message.reply_text("Error")
