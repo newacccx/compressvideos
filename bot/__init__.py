@@ -41,6 +41,7 @@ LOG_FILE_ZZGEVC = "Log.txt"
 BOT_USERNAME = Config.BOT_USERNAME 
 UPDATES_CHANNEL = "botlogas"
 data = []
+datetime = []
 crf = []
 text = []
 size= []
