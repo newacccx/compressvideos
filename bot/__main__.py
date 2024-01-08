@@ -23,7 +23,9 @@ from bot import (
     name,
     size,
     acodec,
-    metadata
+    metadata,
+    metadata1,
+    metadata2
 )
 from bot.helper_funcs.utils import add_task, on_task_complete
 from pyrogram import Client, filters
@@ -52,6 +54,8 @@ audio_b.append("40k")
 acodec.append("libopus")
 name.append("Anime Zenith")
 metadata.append("Anime Zenith")
+metadata1.append("Anime Zenith")
+metadata2.append("Anime Zenith")
 size.append("15")
 
 uptime = dt.now()
