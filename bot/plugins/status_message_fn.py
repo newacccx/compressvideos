@@ -22,6 +22,8 @@ from bot import (
     acodec,
     size,
     metadata,
+    metadata1,
+    metadata2,
     data,
     pid_list
 )
