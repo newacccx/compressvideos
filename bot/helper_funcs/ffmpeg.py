@@ -30,6 +30,8 @@ from bot import (
     acodec,
     size,
     metadata,
+    metadata1,
+    metadata2,
     pid_list
 )
 
@@ -54,12 +56,14 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     acodec.append("libopus")
     name.append("Anime Zenith")
     metadata.append("Anime Zenith")
+    metadata1.append("Anime Zenith")
+    metadata2.append("Anime Zenith")
     size.append("15")
     file_genertor_command = (
     f"ffmpeg -hide_banner -loglevel quiet -progress '{progress}' -i '{video_file}' "
     f"-metadata title={metadata[0]} -c:v {codec[0]} -map 0 -crf {crf[0]} -c:s copy "
     f"-pix_fmt yuv420p -s {resolution[0]} -b:v 150k -c:a {acodec[0]} -b:a {audio_b[0]} "
-    f"-preset {preset[0]} -metadata:s:a 'title={metadata[0]}' -metadata:s:s 'title={metadata[0]}' "
+    f"-preset {preset[0]} -metadata:s:a 'title={metadata1[0]}' -metadata:s:s 'title={metadata2[0]}' "
     f'-vf "drawtext=fontfile=font.ttf:fontsize={size[0]}:fontcolor=white:bordercolor=black@0.50:x=w-tw-10:y=10:box=1:boxcolor=black@0.5:boxborderw=6:text={name[0]}" '
     f"{out_put_file_name} -y"
 )
