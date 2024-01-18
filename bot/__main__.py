@@ -108,7 +108,7 @@ if __name__ == "__main__" :
 
             settings_message = f"<b>The current settings will be added to your video file:</b>\n\n{video_settings}\n\n{audio_settings}\n\n{watermark_settings}\n\n{speed_settings}"
 
-            await message.reply_text(settings_message, parse_mode="HTML")
+            await message.reply_text(settings_message)
 
     @app.on_message(filters.incoming & filters.command(["resolution", f"resolution@{BOT_USERNAME}"]))
     async def changer(app, message):
