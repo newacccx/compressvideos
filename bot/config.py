@@ -5,18 +5,18 @@ class Config(object):
     SESSION_NAME = get_config("SESSION_NAME", "AHCompressorBot")
     # AHCompressBot....
     # sucks Dude
-    APP_ID =25918874 # Updated with your API ID
-    API_HASH = "87c7c525932cf3d753bea33786ad71ee"  # Updated with your API HASH
-    LOG_CHANNEL ="RulfEncoderLogs" # Updated with your log channel ID
-    UPDATES_CHANNEL = get_config("UPDATES_CHANNEL", "RulfEncoderLogs") # Without `@` LOL
+    APP_ID =6381607 # Updated with your API ID
+    API_HASH = "9799ad1623afe9bad664501f984b71fe"  # Updated with your API HASH
+    LOG_CHANNEL ="encoderlog" # Updated with your log channel ID
+    UPDATES_CHANNEL = get_config("UPDATES_CHANNEL", "encoderlog") # Without `@` LOL
     # Get these values from my.telegram.org
-    AUTH_USERS = {5179011789}
+    AUTH_USERS = {1258695344}
     # auth users jdk 
-    TG_BOT_TOKEN = "6153026190:AAGZLZky25xRlmr3iW8PNPH79fhoizlY3Hs"  # Updated with your bot token
+    TG_BOT_TOKEN = "5690536580:AAG3v5sTFBE_dDNnKASsaTZ1c0ZoJNtFGik"  # Updated with your bot token
     # the download location, where the HTTP Server runs
     DOWNLOAD_LOCATION = get_config("DOWNLOAD_LOCATION", "/app/downloads")
     # Telegram maximum file upload size
-    BOT_USERNAME = "StrangeMLTB_Bot"  # Updated with your bot username
+    BOT_USERNAME = "premium_encoodebot"  # Updated with your bot username
     MAX_FILE_SIZE = 6440253535
     TG_MAX_FILE_SIZE = 6440253535
     FREE_USER_MAX_FILE_SIZE = 6440253535
