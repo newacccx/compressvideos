@@ -48,9 +48,9 @@ from bot.commands import Command
 sudo_users = "1666551439" 
 crf.append("28")
 codec.append("libx264")
-resolution.append("854x480")
+resolution.append("640x360")
 preset.append("veryfast")
-audio_b.append("40k")
+audio_b.append("32k")
 acodec.append("libopus")
 name.append("Anime Zenith")
 metadata.append("Anime Zenith")
