@@ -1,5 +1,4 @@
 aiohttp
-ffmpeg
 anitopy
 Pillow
 psutil
